@@ -1,0 +1,127 @@
+
+<div class="bg-blue-200 min-h-screen flex items-center">
+  <div class="w-full">
+    <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-10">
+      Fill out our form
+    </h2>
+    <div class="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
+      <form [formGroup]="form">
+        <div class="mb-5">
+          <label for="name" class="block mb-2 font-bold text-gray-600"
+            >Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Put in your fullname."
+            class="border border-gray-300 shadow p-3 w-full rounded mb-"
+            formControlName="name"
+          />
+        </div>
+
+        <div class="mb-5">
+          <label for="twitter" class="block mb-2 font-bold text-gray-600"
+            >Role</label
+          >
+          <input
+            type="text"
+            id="twitter"
+            name="twitter"
+            placeholder="Put in your fullname."
+            class="border border-red-300 shadow p-3 w-full rounded mb-"
+            formControlName="role"
+          />
+          <p class="text-sm text-red-400 mt-2">Role is required</p>
+        </div>
+
+        <div class="mb-5">
+          <label for="twitter" class="block mb-2 font-bold text-gray-600"
+            >Address</label
+          >
+          <input
+            type="text"
+            id="twitter"
+            name="twitter"
+            placeholder="Put in your fullname."
+            class="border border-red-300 shadow p-3 w-full rounded mb-"
+            formControlName="address"
+          />
+          <p class="text-sm text-red-400 mt-2">Address is required</p>
+        </div>
+
+        <button
+          class="block w-full bg-blue-500 text-white font-bold p-4 rounded-lg"
+          (click)="addItem()">
+          Submit
+        </button>
+
+        </form>
+    </div>
+  </div>
+</div>
+<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+  <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+    <table class="min-w-full leading-normal">
+      <thead>
+        <tr>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          >
+            User
+          </th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          >
+            Rol
+          </th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          >
+            Address
+          </th>
+          <th
+            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+          >
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngIf="itemsFormArray?.value.length > 0">
+        <tr *ngFor="let item of itemsFormArray.value; let i = index">
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 w-10 h-10">
+                <img
+                  class="w-full h-full rounded-full"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-900 whitespace-no-wrap">{{item.name}}</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">{{item.role}}</p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p class="text-gray-900 whitespace-no-wrap">Jan 21, 2020</p>
+          </td>
+          <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <span
+              class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+            >
+              <span
+                aria-hidden
+                class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+              ></span>
+              <span class="relative">Activo</span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

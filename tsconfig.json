@@ -5,6 +5,16 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "dynamic-form-lib": [
+        "dist/dynamic-form-lib/dynamic-form-lib",
+        "dist/dynamic-form-lib"
+      ],
+      "dynamic-form-library": [
+        "dist/dynamic-form-library/dynamic-form-library",
+        "dist/dynamic-form-library"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

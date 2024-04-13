@@ -100,6 +100,68 @@
           }
         }
       }
+    },
+    "dynamic-form-lib": {
+      "projectType": "library",
+      "root": "projects/dynamic-form-lib",
+      "sourceRoot": "projects/dynamic-form-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dynamic-form-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dynamic-form-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dynamic-form-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dynamic-form-lib/src/test.ts",
+            "tsConfig": "projects/dynamic-form-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/dynamic-form-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "dynamic-form-library": {
+      "projectType": "library",
+      "root": "projects/dynamic-form-library",
+      "sourceRoot": "projects/dynamic-form-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dynamic-form-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dynamic-form-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dynamic-form-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dynamic-form-library/src/test.ts",
+            "tsConfig": "projects/dynamic-form-library/tsconfig.spec.json",
+            "karmaConfig": "projects/dynamic-form-library/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "dynamic-form"
